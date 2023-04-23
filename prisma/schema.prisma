@@ -46,11 +46,12 @@ model verification {
 }
 
 model User {
-  id            Int     @id @default(autoincrement())
-  email         String? @unique
-  emailVarified String?
-  image         String?
-
+  id              Int       @id @default(autoincrement())
+  username        String
+  password        String
+  email           String?   @unique
+  emailVarified   String?
+  image           String?
   Account         Account[]
   Session         Session[]
   writtenRecipes  Recipes[] @relation("WrittenRecipes")
