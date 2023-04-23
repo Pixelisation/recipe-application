@@ -2,8 +2,8 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import theme, { roboto } from '../pages/lib/utils/theme';
-import createEmotionCache from '../pages/lib/utils/createEmotionCache';
+import theme, { roboto } from '../../lib/utils/theme';
+import createEmotionCache from '../../lib/utils/createEmotionCache';
 
 export default function MyDocument(props) {
   const { emotionStyleTags } = props;
