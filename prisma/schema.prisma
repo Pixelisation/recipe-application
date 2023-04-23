@@ -46,12 +46,31 @@ model verification {
 }
 
 model User {
-  id      Int       @id @default(autoincrement())
-  
-  Account Account[]
-  Session Session[]
+  id            Int     @id @default(autoincrement())
+  email         String? @unique
+  emailVarified String?
+  image         String?
+
+  Account         Account[]
+  Session         Session[]
+  writtenRecipes  Recipes[] @relation("WrittenRecipes")
+  favoriteRecipes Recipes[] @relation("FavoriteRecipes")
 }
 
 model Recipes {
-  id Int @id @default(autoincrement())
+  id            Int      @id @default(autoincrement())
+  image         Bytes
+  title         String
+  prep_time     Int
+  cook_time     Int
+  total_time    Int
+  discription   String   @db.Text
+  ingredients   String   @db.Text
+  instructions  String   @db.Text
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  author        User     @relation("WrittenRecipes", fields: [authorId], references: [id])
+  authorId      Int
+  favoritedBy   User?    @relation("FavoriteRecipes", fields: [favoritedById], references: [id])
+  favoritedById Int?
 }
