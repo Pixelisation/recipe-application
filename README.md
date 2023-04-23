@@ -37,3 +37,19 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # recipe-application
+
+# Inspiration for the application
+> Food
+
+# Technologies used to build this application 
+- This is my first time using these application
+- [Next.js](https://nextjs.org/)
+- [Material UI](https://mui.com/)
+- [Prisma](https://www.prisma.io/)
+- [Auth.js](https://authjs.dev/)
+
+# How to use the application
+
+# Bugs
+
+# Unfinished functionality
