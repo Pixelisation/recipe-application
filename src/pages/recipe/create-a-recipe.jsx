@@ -25,13 +25,32 @@ export default function CreateARecipeForm() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Nav />
-        <Box sx={{ marginTop: "120px", marginLeft: 2 }}>
+        <Box sx={{ mt: "120px", marginLeft: 2 }}>
           <form>
             <Box sx={{ width: 550, height: 400, bgcolor: "red" }}>
               Burger
-              <Box sx={{ marginLeft: 100, bottom: 800 }}>
+              {/* Container for title and Description */}
+              <Box sx={{ ml: 100}}>
+                {/* TextField for Title */}
                 <TextField
-                  sx={{ marginTop: 3, width: 300 }}
+                  sx={{ width: 300 }}
+                  required
+                  id="outlined-basic"
+                  label="title"
+                  variant="outlined"
+                />
+                {/* TextField for Description */}
+                <TextField
+                  sx={{ mt: 3, width: 400 }}
+                  required
+                  id="outlined-multiline-static"
+                  label="Description"
+                  multiline
+                  rows={3}
+                  placeholder="Description of the recipe"
+                />
+                <TextField
+                  sx={{ mt: 3, width: 150 }}
                   required
                   id="outlined-basic"
                   label="Prep Time"
@@ -39,7 +58,7 @@ export default function CreateARecipeForm() {
                   placeholder="Ex: 10"
                 />
                 <TextField
-                  sx={{ marginTop: 3, width: 300 }}
+                  sx={{ mt: 3, width: 150 }}
                   required
                   id="outlined-basic"
                   label="Cook Time"
@@ -47,55 +66,41 @@ export default function CreateARecipeForm() {
                   placeholder="Ex: 10"
                 />
                 <TextField
-                  sx={{ marginTop: 3, width: 300 }}
+                  sx={{ mt: 3, width: 150 }}
                   required
                   id="outlined-basic"
                   label="Total Time"
                   variant="outlined"
-                  placeholder="Cook Time + Prep Time"
-                />
-                <TextField
-                  sx={{ marginTop: 3, width: 300 }}
-                  required
-                  id="outlined-multiline-static"
-                  label="Ingredients"
-                  multiline
-                  rows={4}
-                />
-                <TextField
-                  sx={{ marginTop: 3, width: 300 }}
-                  required
-                  id="outlined-multiline-static"
-                  label="Directions"
-                  multiline
-                  rows={4}
+                  placeholder="Total time"
                 />
               </Box>
             </Box>
-            <Box sx={{ width: { sm: 1, md: 200 } }}>
+            <Box sx={{ display: "flex", flexDirection: "row", gap: 2, mt: 5 }}>
+              {/* TextField for Ingredients */}
               <TextField
-                sx={{ marginTop: 3, width: 300 }}
-                required
-                id="outlined-basic"
-                label="title"
-                variant="outlined"
-              />
-              <TextField
-                sx={{ marginTop: 3, width: 300 }}
+                sx={{ mt: 3, width: 450 }}
                 required
                 id="outlined-multiline-static"
-                label="Discription"
+                label="Ingredients"
                 multiline
-                rows={3}
-                placeholder="Discription of the recipe"
+                rows={4}
+              />
+              {/* TextField for Directions */}
+              <TextField
+                sx={{ mt: 3, width: 450 }}
+                required
+                id="outlined-multiline-static"
+                label="Directions"
+                multiline
+                rows={4}
               />
             </Box>
-            <Stack sx={{ marginLeft: 114 }} direction="row" spacing={2}>
-              <Button Size="medium" variant="contained">
-                Cancel{" "}
-              </Button>
+            <Stack sx={{ m: 1 }} direction="row" spacing={2}>
               <Button size="medium" variant="contained">
                 Submit
+              </Button>
+              <Button Size="medium" variant="contained">
+                Cancel{" "}
               </Button>
             </Stack>
           </form>
@@ -115,7 +120,7 @@ export default function CreateARecipeForm() {
       <Nav />
       <Container
         sx={{
-          marginTop: "400px",
+          mt: "450px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
